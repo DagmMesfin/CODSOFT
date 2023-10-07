@@ -1,0 +1,181 @@
+@charset "UTF-8";
+body {
+  background-image: linear-gradient(135deg, #749EFF, #7D869B);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.text {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  height: 500px;
+  border-radius: 37px;
+  padding: 10px;
+  margin-top: 5%;
+  margin-bottom: 6%;
+  background-color: #749EFF;
+  background-blend-mode: overlay;
+}
+.text h1 {
+  margin-left: 15px;
+}
+
+.add_cta {
+  position: relative;
+  align-items: right;
+}
+
+.add_task {
+  position: absolute;
+  width: 80%;
+  height: 40px;
+  margin-left: 30px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  font-size: 21px;
+  color: rgb(22, 22, 22);
+  font-size: 15px;
+  padding: 0 30px;
+}
+
+.add_task_btn {
+  position: absolute;
+  right: 25.5px;
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  border: none;
+  background-image: linear-gradient(to left, #0070C0, #54A9E6);
+  color: white;
+  font-size: 21px;
+  font-weight: 600;
+  font-style: italic;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.add_task_btn:hover {
+  opacity: 0.8;
+  scale: 1.05;
+  transition: 0.2s;
+}
+
+.add_task_btn:active {
+  opacity: 0.9;
+  scale: 0.95;
+}
+
+.todolist {
+  position: absolute;
+  width: 76%;
+  height: 325px;
+  background-color: rgba(240, 248, 255, 0.5);
+  top: 30%;
+  left: 7%;
+  border-radius: 20px;
+  padding: 10px 30px;
+}
+
+.list-container {
+  margin: 1rem;
+}
+
+.list-elem {
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: space-between;
+  background-color: rgba(0, 112, 192, 0.3019607843);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+.list-elem button, .list-elem input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.texto {
+  font-size: 17px;
+  cursor: pointer;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: relative;
+  transition: 0.4s;
+}
+
+.texto:not(:-moz-read-only) {
+  text-decoration: solid;
+  color: rgba(3, 45, 75, 0.7725490196);
+}
+
+.texto:not(:read-only) {
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  color: rgba(3, 45, 75, 0.7725490196);
+}
+
+.texto::before {
+  content: "✅";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  left: -30px;
+}
+
+.texto.check {
+  color: #555;
+  text-decoration: line-through;
+}
+
+.texto.check::before {
+  content: "☑️";
+}
+
+.texto.check:not(:-moz-read-only) {
+  text-decoration: solid;
+  color: rgba(3, 45, 75, 0.7725490196);
+}
+
+.texto.check:not(:read-only) {
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  color: rgba(3, 45, 75, 0.7725490196);
+}
+
+.action {
+  display: flex;
+  margin: 0 0.5rem;
+}
+.action button {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.action button:hover {
+  opacity: 0.8;
+  scale: 1.05;
+  transition: 0.2s;
+}
+.action button:active {
+  opacity: 0.9;
+  scale: 0.95;
+}
+.action .edit {
+  color: linear-gradient(to left, #0070C0, #54A9E6);
+}
+.action .delete {
+  color: crimson;
+}/*# sourceMappingURL=main.css.map */

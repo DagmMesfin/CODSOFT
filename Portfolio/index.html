@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dagi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="image/main_logo.png">
+</head>
+<body>
+    <div class="hero" id="hero">
+        <div class="nav-bar">
+            <nav>
+                <img src="image/Dagi_logo.png" alt="brand dagi" class="logo">
+                <ul id="side-bar">
+                    <li class="sound_eff"><a href="#hero">Home</a></li>
+                    <li class="sound_eff"><a href="#about-me">About Me</a></li>
+                    <li class="sound_eff"><a href="#portfolio">Portfolio</a></li>
+                    <li class="sound_eff"><a href="#my-resume">My Resume</a></li>
+                    <li class="sound_eff"><a href="#contact-me">Contact Me</a></li>
+                    <i class="fa-solid fa-times fa-xl" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars fa-xl" onclick="openmenu()"></i>
+            </nav>
+        </div>
+    
+        <div class="header" id="header">
+            <div class="header-item header-text-1">
+                <h1>Hey there!</h1>
+            </div>
+            <div class="header-item header-text-2">
+                <h1>I am <span>Dagim</span> Mesfin</h1>
+                <p class="role">Web Developer<span>   |</span> Tech Enthusiast</p>
+                <p class="quote">"A guy who aspires to grasp the realm of technology!"</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about-me" id="about-me">
+        <div class="container">
+        <div class="row">
+            <div class="abt-col-1">
+                <img src="image/dmsl_red.png" alt="">
+            </div>
+            <div class="abt-col-2">
+                <div class="title-block">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Hello, I'm Dagim Mesfin, and I'm excited to share a glimpse into who I am. I have an unwavering passion for coding and a strong drive to solve problems that come my way. Currently, I have set sail into the captivating realm of web development, where I strive to create engaging and user-friendly digital experiences.</p>
+                    <p>
+                        I am excited about the endless possibilities that lie ahead in my coding journey. With each project, I strive to refine my skills, push boundaries, and contribute to the ever-expanding digital landscape. Join me as I embark on this exciting adventure, eager to make a difference one line of code at a time.</p>
+                </div>
+                <div class="tabs">
+                    <p class="tab-link active-tab sound_eff" onclick="opentb('skill')">Main Skills</p>
+                    <p class="tab-link sound_eff" onclick="opentb('prog')">Code-O-Meter</p>
+                    <p class="tab-link sound_eff" onclick="opentb('edu')">Education</p>
+                    <p class="tab-link sound_eff" onclick="opentb('exp')">Experience</p>
+                    
+                </div>
+                <div class="content active-content" id="skill">
+                    <ul>
+                        <li><span>Web Development</span><br>HTML-CSS-JS Web Developer with a bit Bootstrap Skills</li>
+                        <li><span>Mobile App Development (Beginner-tier)</span><br>Have an expertise working with Flutter framework</li>
+                        <li><span>Game Development (Loading...)</span><br>Currently learning about Unity Engine</li>
+                        <li><span>Programming Skills</span><br>C++, Python, Flutter, C#, JS, CSS, BunnaScript</li>
+                        <li><span>Algorithmic Thinking Skill</span><br>Enables me to find a solution to the given problem I encounter</li>
+                        <li><span>Communication Skills</span><br>Able to work and mingle with people</li>
+                    </ul>
+                </div>
+                <div class="content" id="prog">
+                    <div class="row">
+                        <div class="con-col-1"><ul>
+                            <li><span>C++</span> <br> <div class="box_cpp"></div></li>
+                            <li><span>Python</span><br><div class="box_py"></div></li>
+                            <li><span>BunnaScript</span><br><div class="box_bs"></div></li>
+                            <li><span>PHP</span><br><div class="box_php"></div></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="con-col-2">
+                        <ul>
+                            <li><span>HTML5</span> <br> <div class="box_html"></div></li>
+                            <li><span>CSS3</span><br><div class="box_css"></div></li>
+                            <li><span>Flutter</span><br><div class="box_flutter"></div></li>
+                            <li><span>JavaScript</span><br><div class="box_js"></div></li>
+                        </ul>
+                    </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="content" id="edu">
+                    <ul>
+                        <li><span>Biruh Tesfa School</span><br>2013-2017</li>
+                        <li><span>Debre Birhan General Secondary School</span><br>2017-2019</li>
+                        <li><span>Haile Mariam Mamo Preparatory School</span><br>2019-2021</li>
+                        <li><span>Addis Ababa Science and Technology University</span><br>2021 - Present</li>
+                    </ul>
+                </div>
+                <div class="content" id="exp">
+                    <ul>
+                        <li><span>Scouting</span><br>Biruh Tesfa School (2014 - 2019)</li>
+                        <li><span>ICT & Science and Technology Club Lead</span><br>Biruh Tesfa School(2014-2017)</li>
+                        <li><span>Mini-Media Club</span><br>Debre Birhan General Secondary School (2017-2019)</li>
+                        <li><span>STEM Summer Outreach Program</span><br>Debre Birhan University (2016, 2017, 2018, 2021)</li>
+                        <li><span>Bahre-Hasab</span><br>June. 2021</li>
+                        <li><span>Geez Calculator</span><br>Aug. 2022</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="portfolio" id="portfolio">
+        <h1 class="subtitle">Portfolio</h1>
+        <div class="port-content">
+            <div class="port-title">
+                <h1>Bahre-Hasab</h1>
+            </div>
+            <div class="port-subtitle">
+                <h2>Calculates the Fasting Days and The holidays of Ethiopian Orthodox Church</h2>
+            </div>
+            <div class="row">
+                <div class="port-col-1">
+                    <img src="image/Group 1.png" alt="" class="bahre-img">
+                </div>
+                <div class="port-col-2">
+                    <ul>
+                        <li><span>Seemless Calculation</span><br> It calculates various days of known
+                            fasting days and holidays which
+                            Ethiopian Orthodox Church follows</li>
+                        <li><span>Accuracy of the Holiday</span><br>In addition to that, It calculates the 
+                            whenabouts of Ethiopian holidays
+                            without any errors</li>
+                        <li><span>Integrated Gregorean-to-Ethiopian Converter</span><br>It converts the system's date from 
+                            Gregorean-to-Ethiopian calendar 
+                            system on the way.</li>
+                        <li><span>Integrated Gregorean-to-Ethiopian Converter</span><br>It converts the system's date from 
+                            Gregorean-to-Ethiopian calendar 
+                            system on the way.</li>
+                    </ul>
+                    <div class="button sound_eff">
+                        <button><a href="https://www.geez.infinityfreeapp.com">Get Started</a></button>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <div class="port-content">
+            <div class="port-title">
+                <h1>Geez Calculator</h1>
+            </div>
+            <div class="port-subtitle">
+                <h2>A Flutter App Ideal for making Geez Numerals in Action</h2>
+            </div>
+            <div class="row">
+                <div class="port-col-1">
+                    <img src="image/Group 14.png" alt="" class="geez-img">
+                </div>
+                <div class="port-col-2">
+                    <ul>
+                        <li><span>Basic Operations with Geez Numeral </span><br> It performs basic operations (addition, 
+                            Subtraction, Multiplication and Division)
+                            using the Geez Numerals</li>
+                        <li><span>Numeral Converter</span><br>Converts between Arabic Numeral and 
+                            Geez Numeral (vice versa) seamlessly
+                            with integrated algorithm </li>
+                        <li><span>Works for the Android OS</span><br>Works on all Android OS-operating phones</li>
+                        <li><span>Made by Flutter</span><br>Done and Made by Flutter Framework</li>
+                    </ul>
+                    <div class="button sound_eff">
+                        <button><a href="https://com-geez-geezcalculator.en.uptodown.com/android">Download</a></button>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <div class="my-resume" id="my-resume">
+        <h1 class="subtitle">My Resume</h1>
+        <p>If you want to know more about me, you can 
+            <span>download</span> my resume by clicking this button</p>
+        <div class="button">
+            <button class="sound_eff"><a href="docs/Dagm Mesfin.pdf">Download CV</a></button>
+        </div>
+    </div>
+
+    <div class="contact-me" id="contact-me">
+        <h1 class="subtitle">Contact Me</h1>
+        <div class="row">
+            <div class="img-prof">
+                <img src="image/logo-profile.jpg" alt="">
+            </div>
+        
+        <div class="contact-list">
+            <p><i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"> </i> <a href="https://www.instagram.com/dagmdmsl88/">@dagmdmsl88</a>       </p>
+            <p><i class="fa-brands fa-telegram fa-xl" style="color: #ffffff;"> </i>   <a href="https://t.me/DageronDeEthiopas">@DageronDeEthiopas</a>      </p>
+            <p><i class="fa-brands fa-linkedin fa-xl" style="color: #ffffff;"> </i>    <a href="https://www.linkedin.com/in/dagim-mesfin-40418a267">www.linkedin.com/in/dagim-mesfin-40418a267</a>     </p>
+            <p><i class="fa-regular fa-envelope fa-xl" style="color: #ffffff;"> </i>  <a href="mailto:dagmmesfinthedeveloper25@gmail.com">dagmmesfinthedeveloper25@gmail.com</a>          </p>
+            <p><i class="fa-brands fa-github fa-xl" style="color: #ffffff;"> </i>    <a href="https://www.github.com/DagmMesfin">www.github.com/DagmMesfin</a></p>
+        </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2023 <img src="image/Dagi_logo.png" alt=""> & Ge'ez. All Rights Reserved!</p> 
+    </div>
+</body>
+<script src="js/main.js"></script>
+<script src="https://kit.fontawesome.com/44c08c7180.js" crossorigin="anonymous"></script>
+</html>
