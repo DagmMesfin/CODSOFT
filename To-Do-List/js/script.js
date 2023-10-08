@@ -5,16 +5,16 @@ var counter = 0;
 
 var check_sound = new Audio();
 check_sound.src = "sound/check_eff.wav";
-check_sound.volume = 0.2;
+check_sound.volume = 0.5;
 var delete_sound = new Audio();
 delete_sound.src = "sound/delete_eff.wav";
-delete_sound.volume = 0.4;
+delete_sound.volume = 0.5;
 var edit_sound = new Audio();
 edit_sound.src = "sound/edit_eff.wav";
-edit_sound.volume = 0.4;
+edit_sound.volume = 0.5;
 var writing_sound = new Audio();
 writing_sound.src = "sound/writing_eff.wav";
-writing_sound.volume = 0.4;
+writing_sound.volume = 0.5;
 
 inp_box.addEventListener("click", function () {
     writing_sound.play();
