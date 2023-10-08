@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   background-image: linear-gradient(135deg, #749EFF, #7D869B);
   justify-content: center;
@@ -11,7 +17,7 @@ body {
   position: relative;
   max-width: 600px;
   width: 100%;
-  height: 500px;
+  min-height: 500px;
   border-radius: 37px;
   padding: 10px;
   margin-top: 5%;
@@ -59,20 +65,19 @@ body {
 }
 
 .add_task_btn:hover {
-  opacity: 0.8;
-  scale: 1.05;
+  scale: 1.1;
   transition: 0.2s;
 }
 
 .add_task_btn:active {
-  opacity: 0.9;
   scale: 0.95;
 }
 
 .todolist {
-  position: absolute;
-  width: 76%;
-  height: 325px;
+  margin-top: 80px;
+  margin-left: 40px;
+  width: 85%;
+  min-height: 325px;
   background-color: rgba(240, 248, 255, 0.5);
   top: 30%;
   left: 7%;

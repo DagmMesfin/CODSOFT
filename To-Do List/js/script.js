@@ -12,7 +12,6 @@ function addingTask(){
         }
         const task_cont = document.createElement("div"); 
         task_cont.classList.add("list-container");
-        task_cont.setAttribute('id', 'yourElementId');
         store_list.appendChild(task_cont);
         
 
@@ -83,8 +82,11 @@ function DataSave(){
     console.log(task_list_elem);
 }
 
+
+//loading the data with each values and functions
 function DataLoad(){
     store_list.innerHTML = localStorage.getItem("stored_data");
+
     task_list = document.querySelectorAll(".texto");
     task_list_elem = JSON.parse(localStorage.getItem("task_list"));
 
@@ -96,6 +98,31 @@ function DataLoad(){
     
     counter = localStorage.getItem("num_task");
 
+    list_cont = store_list.querySelectorAll(".list-container");
+
+    list_cont.forEach(element => {
+        edit_btn = element.querySelector(".edit");
+        delete_btn = element.querySelector(".delete");
+        task_inp_elem = element.querySelector(".texto");
+
+        edit_btn.addEventListener('click', () => {
+            if(edit_btn.innerText.toLowerCase() == "edit"){
+                task_inp_elem.removeAttribute("readonly");
+                task_inp_elem.focus();
+                edit_btn.innerText = "Save";
+            } else {
+                task_inp_elem.setAttribute("readonly", "readonly");
+                edit_btn.innerText = "Edit";
+                DataSave();
+            }
+        });
+
+        delete_btn.addEventListener('click', () => {
+            store_list.removeChild(element);
+            counter--;
+            DataSave();
+        });
+    });
 }
 
 DataLoad();
