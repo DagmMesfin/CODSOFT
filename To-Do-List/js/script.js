@@ -3,6 +3,22 @@ const store_list = document.querySelector(".todolist");
 var action_elem = document.createElement("div");
 var counter = 0;
 
+var check_sound = new Audio();
+check_sound.src = "sound/check_eff.wav";
+check_sound.volume = 0.2;
+var delete_sound = new Audio();
+delete_sound.src = "sound/delete_eff.wav";
+delete_sound.volume = 0.4;
+var edit_sound = new Audio();
+edit_sound.src = "sound/edit_eff.wav";
+edit_sound.volume = 0.4;
+var writing_sound = new Audio();
+writing_sound.src = "sound/writing_eff.wav";
+writing_sound.volume = 0.4;
+
+inp_box.addEventListener("click", function () {
+    writing_sound.play();
+});
 
 function addingTask() {
     const task = inp_box.value;
@@ -23,6 +39,7 @@ function addingTask() {
 
     const checkbox = document.createElement("input");
     checkbox.classList.add("checkbox");
+    checkbox.setAttribute("data-key", counter.toString());
     checkbox.type = "checkbox";
     task_elem.appendChild(checkbox);
 
@@ -49,10 +66,13 @@ function addingTask() {
     checkbox.addEventListener("change", function () {
         if (checkbox.checked) {
             task_inp_elem.classList.add("completed");
+            check_sound.play();
         } else {
             task_inp_elem.classList.remove("completed");
+            check_sound.play();
         }
         edit_elem.disabled = !edit_elem.disabled;
+        DataSave();
     });
 
     inp_box.value = "";
@@ -64,22 +84,39 @@ function addingTask() {
             task_inp_elem.removeAttribute("readonly");
             task_inp_elem.focus();
             edit_elem.innerText = "Save";
+            writing_sound.play();
         } else {
             task_inp_elem.setAttribute("readonly", "readonly");
             edit_elem.innerText = "Edit";
             DataSave();
+            edit_sound.play();
         }
     });
     delete_elem.addEventListener("click", () => {
         store_list.removeChild(task_cont);
         counter--;
         DataSave();
+        delete_sound.play();
     });
+    edit_sound.play();
 }
 
 //Saving the Data
 function DataSave() {
     var task_list = document.querySelectorAll(".texto");
+    const checkboxes = document.querySelectorAll(".checkbox");
+    savedStatesObj = [];
+    let i = 0;
+
+    checkboxes.forEach(function (checkbox) {
+        savedStatesObj[i] = checkbox.checked;
+        i++;
+    });
+    localStorage.setItem('checkbox', JSON.stringify(savedStatesObj));
+    console.log(savedStatesObj);
+    console.log(JSON.parse(localStorage.getItem('checkbox')));
+
+
     var task_list_elem = [];
     var task_actions = ["edit", "delete"];
     task_list.forEach((element) => {
@@ -93,36 +130,39 @@ function DataSave() {
     console.log(task_list_elem);
 }
 
-//loading the data with each values and functions
+//loading the data at once
 function DataLoad() {
     store_list.innerHTML = localStorage.getItem("stored_data");
 
-    task_list = document.querySelectorAll(".texto");
-    task_list_elem = JSON.parse(localStorage.getItem("task_list"));
-
-    i = 0;
-    task_list.forEach((element) => {
-        element.value = task_list_elem[i];
-        i++;
+    const checkboxes = store_list.querySelectorAll('.checkbox');
+    const savedStates = JSON.parse(localStorage.getItem('checkbox'));
+    let j = 0;
+    checkboxes.forEach(function (checkbox) {
+        checkbox.checked = savedStates[j];
+        j++;
     });
 
-    counter = localStorage.getItem("num_task");
-
-    list_cont = store_list.querySelectorAll(".list-container");
-
+    const list_cont = store_list.querySelectorAll(".list-container");
+    let i = 0;
     list_cont.forEach((element) => {
-        edit_btn = element.querySelector(".edit");
-        delete_btn = element.querySelector(".delete");
-        task_inp_elem = element.querySelector(".texto");
+        const edit_btn = element.querySelector(".edit");
+        const delete_btn = element.querySelector(".delete");
+        const task_inp_elem = element.querySelector(".texto");
+        const checkbox = element.querySelector(".checkbox");
+        task_list = JSON.parse(localStorage.getItem("task_list"));
+        task_inp_elem.value = task_list[i];
+        i++;
 
         edit_btn.addEventListener("click", () => {
             if (edit_btn.innerText.toLowerCase() == "edit") {
                 task_inp_elem.removeAttribute("readonly");
                 task_inp_elem.focus();
                 edit_btn.innerText = "Save";
+                writing_sound.play();
             } else {
                 task_inp_elem.setAttribute("readonly", "readonly");
                 edit_btn.innerText = "Edit";
+                edit_sound.play();
                 DataSave();
             }
         });
@@ -130,6 +170,18 @@ function DataLoad() {
         delete_btn.addEventListener("click", () => {
             store_list.removeChild(element);
             counter--;
+            delete_sound.play();
+        });
+
+        checkbox.addEventListener("change", function () {
+            if (checkbox.checked) {
+                task_inp_elem.classList.add("completed");
+                check_sound.play();
+            } else {
+                task_inp_elem.classList.remove("completed");
+                check_sound.play();
+            }
+            edit_btn.disabled = !edit_btn.disabled;
             DataSave();
         });
     });
