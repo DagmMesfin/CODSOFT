@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Seat-Regular';
+    src: url('../font/digital-7.ttf') format('truetype');
+  }
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700&display=swap");
+  
 body{
     height: 100vh;
     justify-content: center;
@@ -27,9 +33,10 @@ body{
     height: 75px;
     outline: none;
     border: none;
-    font-size: 21px;
+    font-size: 30px;
     color:rgb(22, 22, 22);
     pointer-events: none;
+    font-family: 'Seat-Regular';
 
 }
 
@@ -61,7 +68,9 @@ body{
   
   .credit p {
     font-size: 15px;
-    font-weight: 200;
+    font-style: italic;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
   }
   
   .credit p img {
