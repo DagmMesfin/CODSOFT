@@ -138,24 +138,9 @@ body {
   left: -30px;
 }
 
-.texto.check {
+.texto.completed {
   color: #555;
   text-decoration: line-through;
-}
-
-.texto.check::before {
-  content: "☑️";
-}
-
-.texto.check:not(:-moz-read-only) {
-  text-decoration: solid;
-  color: rgba(3, 45, 75, 0.7725490196);
-}
-
-.texto.check:not(:read-only) {
-  -webkit-text-decoration: solid;
-          text-decoration: solid;
-  color: rgba(3, 45, 75, 0.7725490196);
 }
 
 .action {
@@ -181,6 +166,50 @@ body {
 .action .edit {
   color: linear-gradient(to left, #0070C0, #54A9E6);
 }
+.action .edit.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 .action .delete {
   color: crimson;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  /*background-image: url('image/unchecked.png');
+
+  */
+}
+.checkbox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #555;
+  border-radius: 50%;
+}
+.checkbox::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  bottom: -3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: url("../image/checked.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.checkbox:checked::after {
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */
