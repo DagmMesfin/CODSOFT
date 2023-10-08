@@ -9,30 +9,34 @@ body{
     justify-content: center;
     display: flex;
     align-items: center;
-    background-color: rgb(218, 255, 255);
+    background-image: linear-gradient(135deg,#749EFF, #7D869B);
 }
 
 .container{
     position: relative;
-    max-width: 350px;
+    max-width: 370px;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 20px;
     padding: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.733);
 
     
 }
 .keys{
+    padding: 10px 12px;
     display: grid;
-    gap: 13px;
-    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    grid-template-columns: repeat(4, 0.5fr);
     
 }
 .num_display{
-    width:100%;
+    margin: 10px;
+    padding: 0px 20px;
+    width:85%;
     height: 75px;
     outline: none;
     border: none;
+    border-radius: 10px;
     font-size: 30px;
     color:rgb(22, 22, 22);
     pointer-events: none;
@@ -41,11 +45,13 @@ body{
 }
 
 .keys button{
-    padding: 12px , 10px;
+    padding: 12px , 5px;
     border-radius: 10px;
     border: none;
     font-size: 22px;
+    color: whitesmoke;
     cursor: pointer;
+    background-image: linear-gradient(135deg,#ffb574, #5b698a);
     
 }
 
@@ -63,7 +69,6 @@ body{
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: 5px 0;
   }
   
   .credit p {
